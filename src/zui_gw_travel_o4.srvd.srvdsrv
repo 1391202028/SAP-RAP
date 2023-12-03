@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service definition for ZC_GW_TRAVEL'
+define service ZUI_GW_TRAVEL_O4 {
+  expose ZC_GW_TRAVEL as ZDM_gw_travel;
+}
