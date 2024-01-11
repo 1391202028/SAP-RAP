@@ -1,0 +1,49 @@
+managed implementation in class ZBP_R_GW_FLIGHT unique;
+strict ( 2 );
+
+define behavior for ZR_GW_FLIGHT
+persistent table zgw_flight
+etag master LoclLastChangedAt
+lock master
+authorization master( global )
+
+{
+  field ( mandatory : create )
+   CarrierID,
+   ConnectionID,
+   FlightDate;
+
+  field ( readonly )
+   CreatedAt,
+   CreatedBy,
+   LastChangedAt,
+   LoclLastChangedAt,
+   LastChangedBy;
+
+  field ( readonly : update )
+   CarrierID,
+   ConnectionID,
+   FlightDate;
+
+
+  create;
+  update;
+  delete;
+
+  mapping for ZGW_FLIGHT
+  {
+    CarrierID = carrier_id;
+    ConnectionID = connection_id;
+    FlightDate = flight_date;
+    Price = price;
+    CurrencyCode = currency_code;
+    PlaneTypeID = plane_type_id;
+    SeatsMax = seats_max;
+    SeatsOccupied = seats_occupied;
+    CreatedBy = created_by;
+    CreatedAt = created_at;
+    LastChangedBy = last_changed_by;
+    LastChangedAt = last_changed_at;
+    LoclLastChangedAt = locl_last_changed_at;
+  }
+}

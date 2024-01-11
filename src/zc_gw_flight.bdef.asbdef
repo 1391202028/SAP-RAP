@@ -1,0 +1,11 @@
+projection;
+strict ( 2 );
+
+define behavior for ZC_GW_FLIGHT
+use etag
+
+{
+  use create;
+  use update;
+  use delete;
+}
